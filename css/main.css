@@ -796,12 +796,9 @@ main.container > .row {
 */
 
 /* Gallery Masonry Layout using CSS Columns */
-/* Target the .row that is a child of main.container and contains .gallery-item */
-/* This selector attempts to be specific to the gallery rows on gallery.html and about.html */
 main.container > .row:has(.gallery-item) {
-  column-gap: 1rem; /* Space between columns */
-  /* Default to 1 column for small screens */
-  column-count: 1;
+  column-gap: 1rem;
+  column-count: 1; /* Default to 1 column for small screens */
 }
 
 .gallery-item {
@@ -820,7 +817,7 @@ main.container > .row:has(.gallery-item) {
 
 @media only screen and (min-width: 993px) { /* Materialize 'l' breakpoint */
   main.container > .row:has(.gallery-item) {
-    column-count: 3 !important;
+    column-count: 2 !important;
   }
 }
 
