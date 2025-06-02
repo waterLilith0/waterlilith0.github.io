@@ -2,6 +2,336 @@ img {
   loading: "lazy" !important;
 }
 
+/* Light Mode Styles */
+.light-mode {
+  background-color: #f4f4f4; /* Light Grey Background */
+  color: #333333; /* Dark Grey Text */
+}
+
+.light-mode a {
+  color: #007bff; /* Standard Blue Links */
+}
+
+.light-mode .card,
+.light-mode .panel {
+  background-color: #ffffff; /* White Card/Panel Background */
+  color: #333333;
+  border-color: #dddddd; /* Light Grey Border */
+}
+
+.light-mode .nav-wrapper { /* More specific selector for navbar background */
+  background-color: #e9ecef !important; /* Very Light Grey Navbar, !important to override Materialize teal */
+}
+
+.light-mode .nav-wrapper a, /* Target links within nav-wrapper */
+.light-mode .nav-wrapper i { /* Target icons within nav-wrapper */
+  color: #343a40 !important; /* Dark Navbar Links and Icons, !important to override Materialize white-text */
+}
+
+.light-mode .nav-wrapper .brand-logo { /* Ensure brand logo is also dark */
+  color: #343a40 !important;
+}
+
+.light-mode .footer.page-footer { /* More specific selector for footer */
+  background-color: #dee2e6 !important; /* Light Grey Footer, !important to override Materialize teal */
+  color: #495057 !important; /* Darker Grey Footer Text */
+}
+
+.light-mode .footer.page-footer .footer-copyright {
+    background-color: rgba(0,0,0,0.06) !important; /* Slightly darker copyright area */
+    color: #495057 !important;
+}
+
+.light-mode .footer.page-footer a { /* Links in footer */
+    color: #007bff !important;
+}
+
+
+/* Buttons */
+.light-mode .btn,
+.light-mode .btn-large,
+.light-mode .btn-small {
+  background-color: #007bff; /* Blue Buttons */
+  color: #ffffff;
+}
+.light-mode .btn:hover,
+.light-mode .btn-large:hover,
+.light-mode .btn-small:hover {
+  background-color: #0056b3; /* Darker Blue on Hover */
+}
+
+.light-mode .btn-floating {
+  background-color: #007bff; /* Blue Floating Action Button */
+  color: #ffffff;
+}
+.light-mode .btn-floating:hover {
+  background-color: #0056b3;
+}
+
+.light-mode .btn-floating.black { /* Override specific black FAB on index */
+    background-color: #007bff !important;
+}
+.light-mode .btn-floating.black:hover {
+    background-color: #0056b3 !important;
+}
+
+
+.light-mode .btn-flat {
+  color: #007bff; /* Blue Flat Button Text */
+}
+.light-mode .btn-flat:hover,
+.light-mode .btn-flat:focus {
+  background-color: rgba(0, 123, 255, 0.1); /* Light Blue Background on Hover/Focus */
+}
+
+/* Forms */
+.light-mode input:not([type]),
+.light-mode input[type=text]:not(.browser-default),
+.light-mode input[type=password]:not(.browser-default),
+.light-mode input[type=email]:not(.browser-default),
+.light-mode input[type=url]:not(.browser-default),
+.light-mode input[type=time]:not(.browser-default),
+.light-mode input[type=date]:not(.browser-default),
+.light-mode input[type=datetime]:not(.browser-default),
+.light-mode input[type=datetime-local]:not(.browser-default),
+.light-mode input[type=tel]:not(.browser-default),
+.light-mode input[type=number]:not(.browser-default),
+.light-mode input[type=search]:not(.browser-default),
+.light-mode textarea.materialize-textarea {
+  color: #495057; /* Dark Input Text */
+  border-bottom: 1px solid #ced4da; /* Light Border */
+}
+.light-mode input:not([type]):focus:not([readonly]),
+.light-mode input[type=text]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=password]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=email]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=url]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=time]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=date]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=tel]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=number]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=search]:not(.browser-default):focus:not([readonly]),
+.light-mode textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #007bff; /* Blue Border on Focus */
+  box-shadow: 0 1px 0 0 #007bff;
+}
+.light-mode input:not([type]):focus:not([readonly]) + label,
+.light-mode input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #007bff; /* Blue Label on Focus */
+}
+.light-mode ::-webkit-input-placeholder { color: #6c757d; }
+.light-mode ::-moz-placeholder { color: #6c757d; }
+.light-mode :-ms-input-placeholder { color: #6c757d; }
+.light-mode ::placeholder { color: #6c757d; }
+
+
+.light-mode .select-wrapper input.select-dropdown {
+  color: #495057;
+  border-bottom: 1px solid #ced4da;
+}
+.light-mode .dropdown-content {
+  background-color: #ffffff;
+  color: #333333;
+}
+.light-mode .dropdown-content li:hover, .light-mode .dropdown-content li.active {
+  background-color: #e9ecef;
+}
+ .light-mode .select-wrapper .caret {
+  fill: #333333; /* Dark caret for select */
+}
+
+.light-mode [type="checkbox"] + span:not(.lever):before,
+.light-mode [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+  border: 2px solid #5a5a5a; /* Standard Checkbox Border */
+}
+.light-mode [type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #007bff; /* Blue Checkmark */
+  border-bottom: 2px solid #007bff;
+}
+.light-mode [type="checkbox"].filled-in + span:not(.lever):after {
+   border: 2px solid #5a5a5a;
+}
+.light-mode [type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid #007bff;
+  background-color: #007bff;
+}
+
+
+.light-mode [type="radio"]:not(:checked) + span:before,
+.light-mode [type="radio"]:not(:checked) + span:after {
+  border: 2px solid #5a5a5a;
+}
+.light-mode [type="radio"]:checked + span:after,
+.light-mode [type="radio"].with-gap:checked + span:before,
+.light-mode [type="radio"].with-gap:checked + span:after {
+  border: 2px solid #007bff;
+}
+.light-mode [type="radio"]:checked + span:after,
+.light-mode [type="radio"].with-gap:checked + span:after {
+  background-color: #007bff; /* Blue Radio Dot */
+}
+
+.light-mode .switch label input[type=checkbox]:checked + .lever {
+  background-color: #79c3ff; /* Lighter Blue for Switch Track */
+}
+.light-mode .switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #007bff; /* Blue Switch Thumb */
+}
+ .light-mode .switch label .lever {
+  background-color: #adb5bd; /* Grey inactive switch track */
+}
+.light-mode .switch label .lever:after {
+  background-color: #f8f9fa; /* Light thumb for inactive switch */
+}
+
+
+.light-mode input[type=range]::-webkit-slider-thumb {
+  background: #007bff; /* Blue Range Thumb */
+}
+.light-mode input[type=range]::-moz-range-thumb {
+  background: #007bff;
+}
+.light-mode input[type=range]::-ms-thumb {
+  background: #007bff;
+}
+ .light-mode input[type=range]::-webkit-slider-runnable-track {
+  background: #ced4da;
+}
+.light-mode input[type=range]::-moz-range-track {
+  background: #ced4da;
+}
+.light-mode input[type=range]::-ms-track {
+  background: #ced4da;
+}
+
+
+/* Collections */
+.light-mode .collection {
+  border: 1px solid #dddddd;
+}
+.light-mode .collection .collection-item {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+.light-mode .collection a.collection-item {
+  color: #007bff;
+}
+.light-mode .collection a.collection-item:hover {
+  background-color: #f8f9fa;
+}
+ .light-mode .collection .collection-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* Badges */
+.light-mode span.badge {
+  background-color: #e9ecef;
+  color: #495057;
+}
+.light-mode span.badge.new {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Toasts */
+.light-mode .toast {
+  background-color: #343a40; /* Dark Toast Background */
+  color: #f8f9fa; /* Light Toast Text */
+}
+
+/* Modals */
+.light-mode .modal {
+  background-color: #ffffff;
+  color: #333333;
+}
+.light-mode .modal-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dddddd;
+}
+
+/* Collapsibles */
+.light-mode .collapsible-header {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+.light-mode .collapsible-body {
+  background-color: #f8f9fa;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Tabs */
+.light-mode .tabs { /* Ensure tabs background is white */
+    background-color: #ffffff;
+}
+.light-mode .tabs .tab a {
+  color: rgba(0, 123, 255, 0.7); /* Semi-transparent Blue for Inactive Tabs */
+}
+.light-mode .tabs .tab a:hover,
+.light-mode .tabs .tab a.active {
+  color: #007bff; /* Blue for Active/Hover Tabs */
+}
+.light-mode .tabs .indicator {
+  background-color: #007bff; /* Blue Tab Indicator */
+}
+
+/* Preloaders/Spinners */
+.light-mode .spinner-layer {
+  border-color: #007bff; /* Blue Spinner */
+}
+.light-mode .spinner-blue-only { border-color: #007bff; }
+.light-mode .spinner-red-only { border-color: #dc3545; } /* Standard Red */
+.light-mode .spinner-yellow-only { border-color: #ffc107; } /* Standard Yellow */
+.light-mode .spinner-green-only { border-color: #28a745; } /* Standard Green */
+
+/* Explicitly style teal elements from original template to light mode */
+.light-mode .teal {
+    background-color: #e9ecef !important; /* Example: light grey instead of teal */
+    color: #343a40 !important;
+}
+.light-mode .teal.lighten-2 { /* For the main container */
+    background-color: #f4f4f4 !important; /* Main page background */
+    color: #333333 !important;
+}
+ .light-mode .teal.lighten-3 { /* For footer copyright */
+    background-color: #d4d8db !important;
+    color: #333333 !important;
+}
+
+.light-mode .white-text { /* Materialize class that needs override in light mode */
+    color: #343a40 !important;
+}
+.light-mode .grey.darken-3 { /* Original body class if it was there */
+    background-color: #f4f4f4 !important;
+    color: #333333 !important;
+}
+.light-mode .grey-text.text-lighten-2 { /* Footer link text */
+    color: #0056b3 !important;
+}
+ .light-mode .grey-text.text-darken-2 { /* Footer 'More Links' text */
+    color: #0056b3 !important;
+}
+.light-mode .black-text { /* Footer copyright text if it had this */
+    color: #333333 !important;
+}
+
 /* Dark Mode Styles */
 
 /* Version 1: Cool Grey */
