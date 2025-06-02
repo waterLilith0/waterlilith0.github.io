@@ -1,4 +1,345 @@
 img {
-  loading ="lazy" !important;
+  loading: "lazy" !important;
 }
 
+/* Dark Mode Styles */
+
+/* Version 1: Cool Grey */
+.dark-mode-v1 {
+  background-color: #2c3e50; /* Dark Slate Blue */
+  color: #ecf0f1; /* Clouds */
+}
+
+.dark-mode-v1 a {
+  color: #3498db; /* Peter River */
+}
+
+.dark-mode-v1 .card,
+.dark-mode-v1 .panel {
+  background-color: #34495e; /* Wet Asphalt */
+  border-color: #7f8c8d; /* Asbestos */
+}
+
+.dark-mode-v1 .navbar {
+  background-color: #1a252f; /* Darker Slate Blue */
+  border-bottom-color: #2c3e50; /* Dark Slate Blue */
+}
+
+.dark-mode-v1 .navbar a {
+  color: #ecf0f1; /* Clouds */
+}
+
+.dark-mode-v1 .footer {
+  background-color: #1a252f; /* Darker Slate Blue */
+  color: #bdc3c7; /* Silver */
+  border-top-color: #2c3e50; /* Dark Slate Blue */
+}
+
+/* --- V1 Component Styles --- */
+
+/* Buttons */
+.dark-mode-v1 .btn,
+.dark-mode-v1 .btn-large,
+.dark-mode-v1 .btn-small {
+  background-color: #3498db; /* Peter River */
+  color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 .btn:hover,
+.dark-mode-v1 .btn-large:hover,
+.dark-mode-v1 .btn-small:hover {
+  background-color: #2980b9; /* Belize Hole (darker Peter River) */
+}
+.dark-mode-v1 .btn-floating {
+  background-color: #3498db; /* Peter River */
+}
+.dark-mode-v1 .btn-floating i {
+  color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 .btn-floating:hover {
+  background-color: #2980b9; /* Belize Hole */
+}
+.dark-mode-v1 .btn-flat {
+  color: #3498db; /* Peter River */
+}
+.dark-mode-v1 .btn-flat:hover,
+.dark-mode-v1 .btn-flat:focus {
+  background-color: rgba(52, 152, 219, 0.1); /* Peter River with low opacity */
+}
+
+/* Forms */
+.dark-mode-v1 input:not([type]),
+.dark-mode-v1 input[type=text]:not(.browser-default),
+.dark-mode-v1 input[type=password]:not(.browser-default),
+.dark-mode-v1 input[type=email]:not(.browser-default),
+.dark-mode-v1 input[type=url]:not(.browser-default),
+.dark-mode-v1 input[type=time]:not(.browser-default),
+.dark-mode-v1 input[type=date]:not(.browser-default),
+.dark-mode-v1 input[type=datetime]:not(.browser-default),
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default),
+.dark-mode-v1 input[type=tel]:not(.browser-default),
+.dark-mode-v1 input[type=number]:not(.browser-default),
+.dark-mode-v1 input[type=search]:not(.browser-default),
+.dark-mode-v1 textarea.materialize-textarea {
+  color: #ecf0f1; /* Clouds */
+  border-bottom: 1px solid #7f8c8d; /* Asbestos */
+  background-color: transparent;
+}
+.dark-mode-v1 input:not([type]):focus:not([readonly]),
+.dark-mode-v1 input[type=text]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=password]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=email]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=url]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=time]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=date]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=tel]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=number]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=search]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #3498db; /* Peter River */
+  box-shadow: 0 1px 0 0 #3498db; /* Peter River */
+}
+.dark-mode-v1 input:not([type]):focus:not([readonly])+label,
+.dark-mode-v1 input[type=text]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=password]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=email]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=url]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=time]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=date]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=number]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=search]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 textarea.materialize-textarea:focus:not([readonly])+label {
+  color: #3498db; /* Peter River */
+}
+.dark-mode-v1 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #bdc3c7; /* Silver */
+}
+.dark-mode-v1 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #bdc3c7; /* Silver */
+   opacity:  1;
+}
+.dark-mode-v1 ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #bdc3c7; /* Silver */
+   opacity:  1;
+}
+.dark-mode-v1 :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #bdc3c7; /* Silver */
+}
+.dark-mode-v1 ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #bdc3c7; /* Silver */
+}
+.dark-mode-v1 ::placeholder { /* Most modern browsers */
+   color: #bdc3c7; /* Silver */
+}
+
+.dark-mode-v1 .select-wrapper input.select-dropdown {
+  color: #ecf0f1; /* Clouds */
+  border-bottom: 1px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .dropdown-content {
+  background-color: #34495e; /* Wet Asphalt */
+}
+.dark-mode-v1 .dropdown-content li>a,
+.dark-mode-v1 .dropdown-content li>span {
+  color: #ecf0f1; /* Clouds */
+}
+
+.dark-mode-v1 [type="checkbox"]+span:not(.lever):before {
+  border: 2px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 [type="checkbox"]:checked+span:not(.lever):before {
+  border: 2px solid transparent;
+  border-right: 2px solid #3498db; /* Peter River */
+  border-bottom: 2px solid #3498db; /* Peter River */
+}
+.dark-mode-v1 [type="checkbox"].filled-in:checked+span:not(.lever):after {
+  background-color: #3498db; /* Peter River */
+  border-color: #3498db; /* Peter River */
+}
+.dark-mode-v1 [type="checkbox"].filled-in+span:not(.lever):after {
+  border-color: #7f8c8d; /* Asbestos */
+}
+
+.dark-mode-v1 [type="radio"]:not(:checked)+span:before,
+.dark-mode-v1 [type="radio"]:not(:checked)+span:after {
+  border: 2px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 [type="radio"]:checked+span:after,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:before,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:after {
+  border: 2px solid #3498db; /* Peter River */
+}
+.dark-mode-v1 [type="radio"]:checked+span:after,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:after {
+  background-color: #3498db; /* Peter River */
+}
+
+.dark-mode-v1 .switch label input[type=checkbox]:checked+.lever {
+  background-color: #2c85b0; /* Darker Peter River variant */
+}
+.dark-mode-v1 .switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #3498db; /* Peter River */
+}
+.dark-mode-v1 .switch label .lever {
+  background-color: #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .switch label .lever:after {
+  background-color: #bdc3c7; /* Silver */
+}
+
+.dark-mode-v1 input[type=range]::-webkit-slider-thumb {
+  background: #3498db; /* Peter River */
+}
+.dark-mode-v1 input[type=range]::-moz-range-thumb {
+  background: #3498db; /* Peter River */
+}
+.dark-mode-v1 input[type=range]::-ms-thumb {
+  background: #3498db; /* Peter River */
+}
+.dark-mode-v1 input[type=range]+.thumb .value {
+    color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 input[type=range]::-webkit-slider-runnable-track {
+  background: #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 input[type=range]::-moz-range-track {
+  background: #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 input[type=range]::-ms-track {
+  background: #7f8c8d; /* Asbestos */
+}
+
+
+/* Collections */
+.dark-mode-v1 .collection {
+  background-color: #34495e; /* Wet Asphalt */
+  border: 1px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .collection .collection-item {
+  background-color: #34495e; /* Wet Asphalt */
+  color: #ecf0f1; /* Clouds */
+  border-bottom: 1px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .collection a.collection-item {
+  color: #3498db; /* Peter River */
+}
+.dark-mode-v1 .collection a.collection-item:hover {
+  background-color: #2c3e50; /* Dark Slate Blue */
+  color: #ecf0f1; /* Clouds */
+}
+
+/* Badges */
+.dark-mode-v1 span.badge.new {
+  background-color: #3498db; /* Peter River */
+  color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 span.badge {
+  color: #ecf0f1; /* Clouds */
+  background-color: #7f8c8d; /* Asbestos */
+}
+
+
+/* Toasts */
+.dark-mode-v1 .toast {
+  background-color: #34495e; /* Wet Asphalt */
+  color: #ecf0f1; /* Clouds */
+}
+
+/* Modals */
+.dark-mode-v1 .modal {
+  background-color: #34495e; /* Wet Asphalt */
+  color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 .modal-footer {
+  background-color: #2c3e50; /* Dark Slate Blue */
+  border-top: 1px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .modal .modal-close {
+  color: #ecf0f1;
+}
+
+
+/* Collapsibles */
+.dark-mode-v1 .collapsible-header {
+  background-color: #34495e; /* Wet Asphalt */
+  color: #ecf0f1; /* Clouds */
+  border-bottom: 1px solid #7f8c8d; /* Asbestos */
+}
+.dark-mode-v1 .collapsible-body {
+  background-color: #2c3e50; /* Dark Slate Blue */
+  color: #ecf0f1; /* Clouds */
+  border-bottom: 1px solid #7f8c8d; /* Asbestos */
+}
+
+/* Tabs */
+.dark-mode-v1 .tabs {
+    background-color: #34495e; /* Wet Asphalt */
+}
+.dark-mode-v1 .tabs .tab a {
+  color: rgba(236, 240, 241, 0.7); /* Clouds with transparency */
+}
+.dark-mode-v1 .tabs .tab a:hover,
+.dark-mode-v1 .tabs .tab a.active {
+  color: #ecf0f1; /* Clouds */
+}
+.dark-mode-v1 .tabs .indicator {
+  background-color: #3498db; /* Peter River */
+}
+
+/* Preloaders/Spinners */
+.dark-mode-v1 .preloader-wrapper.active .spinner-layer {
+  border-color: #3498db; /* Peter River */
+}
+/* For multi-color spinners, you might need to specify each spinner-color */
+.dark-mode-v1 .preloader-wrapper.active .spinner-blue-only .spinner-layer,
+.dark-mode-v1 .preloader-wrapper.active .spinner-blue .spinner-layer {
+    border-color: #3498db; /* Peter River */
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-red-only .spinner-layer,
+.dark-mode-v1 .preloader-wrapper.active .spinner-red .spinner-layer {
+    border-color: #e74c3c; /* Alizarin - example if you want another color */
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-yellow-only .spinner-layer,
+.dark-mode-v1 .preloader-wrapper.active .spinner-yellow .spinner-layer {
+    border-color: #f1c40f; /* Sun Flower - example */
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-green-only .spinner-layer,
+.dark-mode-v1 .preloader-wrapper.active .spinner-green .spinner-layer {
+    border-color: #2ecc71; /* Emerald - example */
+}
+
+
+/* Version 2: Warm Grey */
+.dark-mode-v2 {
+  background-color: #4a4a4a; /* Dark Grey */
+  color: #f2f2f2; /* Light Grey */
+}
+
+.dark-mode-v2 a {
+  color: #e67e22; /* Carrot */
+}
+
+.dark-mode-v2 .card,
+.dark-mode-v2 .panel {
+  background-color: #5e5e5e; /* Medium Grey */
+  border-color: #7b7b7b; /* Grey */
+}
+
+.dark-mode-v2 .navbar {
+  background-color: #3c3c3c; /* Darker Grey */
+  border-bottom-color: #4a4a4a; /* Dark Grey */
+}
+
+.dark-mode-v2 .navbar a {
+  color: #f2f2f2; /* Light Grey */
+}
+
+.dark-mode-v2 .footer {
+  background-color: #3c3c3c; /* Darker Grey */
+  color: #cccccc; /* Light Silver */
+  border-top-color: #4a4a4a; /* Dark Grey */
+}
