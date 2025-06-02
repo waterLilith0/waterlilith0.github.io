@@ -760,45 +760,81 @@ img {
   border-top-color: #4a4a4a; /* Dark Grey */
 }
 
-/* Gallery Dynamic Spacing */
-/* Target the .row that is a direct child of main.container
-   AND specifically contains .gallery-item children.
-   This is to make it specific to gallery-like structures. */
+/*
+Gallery Dynamic Spacing Rules - Commented Out
+
 main.container > .row {
-    /* Check if this row contains gallery items to be more specific if needed,
-       but for now, let's assume this is primarily for the gallery page.
-       A more robust way would be to add a class like 'gallery-row' to the HTML.
-       For now, we proceed with the existing structure. */
 }
 
-/* If we want to be more specific to rows containing gallery items: */
-.gallery-item-row { /* This class would need to be added to the div.row in gallery.html */
+.gallery-item-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Distributes space around items */
-    align-items: stretch; /* Ensures items in a row stretch to the same height if their content differs */
+    justify-content: space-around;
+    align-items: stretch;
 }
 
-/* Styles for the gallery items themselves */
 .gallery-item {
-    /* Materialize columns (s12 m6 l4) will provide base width.
-       Flexbox will arrange them. Add margin for consistent spacing. */
-    margin: 10px; /* Consistent margin around each gallery item */
-    display: flex; /* Make gallery-item a flex container to help card stretch */
+    margin: 10px;
+    display: flex;
     flex-direction: column;
 }
 
 .gallery-item .card {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allow card to grow to fill gallery-item */
-    width: 100%; /* Ensure card takes full width of the gallery-item col */
+    flex-grow: 1;
+    width: 100%;
 }
 
 .gallery-item .card .card-image {
-    flex-shrink: 0; /* Prevent image from shrinking if card title is long */
+    flex-shrink: 0;
 }
 
 .gallery-item .card .card-content {
-    flex-grow: 1; /* Allow content to take remaining space */
+    flex-grow: 1;
+}
+*/
+
+/* Gallery Masonry Layout using CSS Columns */
+/* Target the .row that is a child of main.container and contains .gallery-item */
+/* This selector attempts to be specific to the gallery rows on gallery.html and about.html */
+main.container > .row:has(.gallery-item) {
+  column-gap: 1rem; /* Space between columns */
+  /* Default to 1 column for small screens */
+  column-count: 1;
+}
+
+.gallery-item {
+  break-inside: avoid; /* Prevent items from splitting across columns */
+  display: block; /* Or inline-block, ensure it's a block-level element for columns */
+  width: 100%; /* Make item take full width of its column */
+  margin-bottom: 1rem; /* Vertical spacing between items in the same column */
+}
+
+/* Responsive column counts */
+@media only screen and (min-width: 601px) { /* Materialize 'm' breakpoint */
+  main.container > .row:has(.gallery-item) {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 993px) { /* Materialize 'l' breakpoint */
+  main.container > .row:has(.gallery-item) {
+    column-count: 3;
+  }
+}
+
+/* Ensure cards within gallery items behave well */
+.gallery-item .card {
+  width: 100%; /* Ensure card takes full width of the gallery-item */
+  /* Resetting any flex properties from previous attempts if they were on .card directly */
+  display: block;
+  flex-grow: 0;
+  flex-direction: initial;
+}
+.gallery-item .card .card-image {
+  flex-shrink: initial;
+}
+.gallery-item .card .card-content {
+  flex-grow: initial;
 }
