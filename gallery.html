@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/main.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
+  <link type="image/x-icon" rel="icon" href="pics/favicon.ico" />
+  <script src="https://kit.fontawesome.com/e473804535.js" crossorigin="anonymous"></script>
+  <title>Gallery | waterLilith</title>
 </head>
 
   <body>
+
+  <nav>
+    <div class="nav-wrapper teal white-text"> <!-- These classes will be overridden by themes -->
+      <a href="index.html" class="brand-logo white-text">waterLilith</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i></a></li>
+        <li>
+          <div class="switch">
+            <label>
+              <input type="checkbox" id="darkModeToggle">
+              <span class="lever"></span>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
     <main class="container cyan lighten-4">
       <div class="row">
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -23,7 +48,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -35,7 +60,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -47,7 +72,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -59,7 +84,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -71,7 +96,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -83,7 +108,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -95,7 +120,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -107,7 +132,7 @@
           </div>
         </div>
 
-        <div class="col gallery-item">
+        <div class="col s12 m6 l4 gallery-item">
           <div class="card">
             <div class="card-image">
               <img class="materialboxed"
@@ -121,5 +146,8 @@
 
       </div>
     </main>
+
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
