@@ -1,7 +1,3 @@
-img {
-  loading: "lazy" !important;
-}
-
 /* Light Mode Styles */
 .light-mode {
   background-color: #f4f4f4; /* Light Grey Background */
