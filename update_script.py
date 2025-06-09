@@ -23,10 +23,17 @@ def get_image_date(image_path):
         pass  # Handle cases where image is not found or EXIF data is missing
     return datetime.min  # Default to min date if no EXIF data found
 
+# --- MODIFIED FUNCTION ---
+# This function now ignores files that start with 'resized_'
 def get_images_from_folder(folder_path):
-    """Gets a list of image filenames and their creation dates from a folder."""
+    """Gets a list of original image filenames and their creation dates from a folder."""
     images = []
     for filename in os.listdir(folder_path):
+        # --- THIS IS THE FIX ---
+        # Skip any files that are already thumbnails to avoid duplication.
+        if filename.lower().startswith('resized_'):
+            continue
+
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
             image_path = os.path.join(folder_path, filename)
             date = get_image_date(image_path)
@@ -35,10 +42,21 @@ def get_images_from_folder(folder_path):
 
 def find_resized_thumb(folder, original_filename):
     """Checks for a 'resized_' version of an image and returns its path if it exists."""
+    # We use os.path.splitext to handle filenames with multiple dots correctly.
+    base_name, ext = os.path.splitext(original_filename)
+    
+    # Rebuild filename to check for resized versions with different original capitalization.
+    # This is more robust but for now we assume consistent naming.
     resized_filename = f"resized_{original_filename}"
+
     resized_path = os.path.join("pics", folder, resized_filename)
+    
+    # To be more robust, we should check for any file named 'resized_{...}' that matches
+    # regardless of the original's case. For now, let's assume the naming is consistent.
+    # A more advanced check could iterate directory contents.
     if os.path.exists(resized_path):
         return f"pics/{folder}/{resized_filename}"
+        
     return None
 
 def generate_data_structure(images, folder):
@@ -59,27 +77,19 @@ def generate_data_structure(images, folder):
         })
     return data
 
-# --- MODIFIED FUNCTION ---
-# This function manually builds the JS string to match the exact requested format.
 def output_javascript_literal(irl_data, vrc_data):
     """Combines data and prints it as a JavaScript object literal string."""
     combined_data = irl_data + vrc_data
     
-    # Start the JavaScript variable declaration
     print("var data = [")
 
-    # Build a list of formatted strings for each object
     object_strings = []
     for item in combined_data:
-        # Note the f-string format: unquoted keys, single-quoted values.
-        # The double curly braces {{ and }} are used to print literal { and } characters.
         s = f"    {{thumb: '{item['thumb']}', image: '{item['image']}', big: '{item['big']}'}}"
         object_strings.append(s)
 
-    # Join the object strings with a comma and a newline
     print(",\n".join(object_strings))
 
-    # Close the JavaScript array and add a semicolon
     print("];")
 
 
@@ -87,18 +97,13 @@ if __name__ == "__main__":
     irl_folder = 'pics/irl'
     vrc_folder = 'pics/vrc'
 
-    # Get images and their dates from each folder
     irl_images = get_images_from_folder(irl_folder)
     vrc_images = get_images_from_folder(vrc_folder)
 
-    # Sort each list of images by date (oldest first)
     irl_images.sort(key=lambda x: x[1])
     vrc_images.sort(key=lambda x: x[1])
 
-    # Generate the data structures for each folder
-    # Renamed generate_json_data to generate_data_structure for clarity
     irl_data = generate_data_structure(irl_images, 'irl')
     vrc_data = generate_data_structure(vrc_images, 'vrc')
 
-    # Combine and print the final output in the specified JS format
     output_javascript_literal(irl_data, vrc_data)

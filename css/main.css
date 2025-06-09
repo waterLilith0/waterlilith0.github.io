@@ -1,3 +1,9 @@
+.galleria {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
 /* Light Mode Styles */
 .light-mode {
   background-color: #f4f4f4; /* Light Grey Background */
