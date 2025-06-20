@@ -1,29 +1,35 @@
-const body = document.querySelector("body");
+// Utility to dynamically switch between light.css and dark.css
+function setThemeCss(theme) {
+  // Remove any existing theme stylesheet
+  let lightLink = document.getElementById('light-css');
+  let darkLink = document.getElementById('dark-css');
 
-// Crazy? I was crazy once! They put me in a room! A rubber room! A rubber room with rats! And Rats? Rats make me crazy!
-const timeout = setInterval(() => {
-  const elem = document.createComment("Crazy? I was crazy once! They put me in a room! A rubber room! A rubber room with rats! And Rats? Rats make me crazy!");
-  // Ensure body exists before appending, though querySelector above should find it.
-  if (document.body) {
-    document.body.appendChild(elem);
+  if (lightLink) lightLink.remove();
+  if (darkLink) darkLink.remove();
+
+  // Add the correct stylesheet
+  const head = document.head;
+  if (theme === "dark") {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/dark.css';
+    link.id = 'dark-css';
+    head.appendChild(link);
+  } else {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/light.css';
+    link.id = 'light-css';
+    head.appendChild(link);
   }
-}, 10);
+}
 
 const darkModeToggle = document.querySelector("#darkModeToggle");
 
 function applyTheme(theme) {
-  if (theme === "dark") {
-    body.classList.add("dark-mode-v1");
-    body.classList.remove("light-mode");
-    if (darkModeToggle) {
-      darkModeToggle.checked = true;
-    }
-  } else { // Assumed "light"
-    body.classList.add("light-mode");
-    body.classList.remove("dark-mode-v1");
-    if (darkModeToggle) {
-      darkModeToggle.checked = false;
-    }
+  setThemeCss(theme);
+  if (darkModeToggle) {
+    darkModeToggle.checked = (theme === "dark");
   }
 }
 
@@ -32,21 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     applyTheme("dark");
-  } else { // Default to light mode if theme is "light" or not set (null)
+  } else {
     applyTheme("light");
   }
 });
 
 if (darkModeToggle) {
   darkModeToggle.addEventListener("change", () => {
-    if (darkModeToggle.checked) { // User switched to Dark Mode
-      body.classList.add("dark-mode-v1");
-      body.classList.remove("light-mode");
+    if (darkModeToggle.checked) {
       localStorage.setItem("theme", "dark");
-    } else { // User switched to Light Mode
-      body.classList.add("light-mode");
-      body.classList.remove("dark-mode-v1");
+      applyTheme("dark");
+    } else {
       localStorage.setItem("theme", "light");
+      applyTheme("light");
     }
   });
 }
