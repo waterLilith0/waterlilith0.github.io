@@ -23,62 +23,78 @@
 </head>
 <body class="grey darken-3 dark-mode-v1">
 
-  <nav>
-    <div class="nav-wrapper teal white-text ">
-      <a href="#" class="brand-logo white-text">waterLilith</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i></a></li>
-        <li>
-          <div class="switch">
-            <label>
-              <input type="checkbox" id="darkModeToggle">
-              <span class="lever"></span>
-            </label>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper dark-mode-v1">
+        <a href="#" class="brand-logo white-text">waterLilith</a>
+        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i></a></li>
+        </ul>
+        <div class="switch right">
+          <label>
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="lever"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-  <div class="container teal lighten-2 section">
-    <h1 class="center">Welcome</h1>
+  <ul class="sidenav" id="mobile">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i> Github</a></li>
+    <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i> Bluesky</a></li>
+  </ul>
+
+  <main class="container teal lighten-2 ">
+    <h1 class="center" id="top">Welcome</h1>
     <div class="container row">
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h3>Hi!</h3>
-        <p>This is my own little website/tinkering space. Nothing special to see on here quite yet but I'm gonna continue updating this as I go (might be a good idea to look at this as kinda my own little blog I suppose).</p>
+      <p>This is my own little website/tinkering space. Nothing special to see on here quite yet but I'm gonna continue updating this as I go (might be a good idea to look at this as kinda my own little blog I suppose).</p>
+
+      <div class="card col s12 m6 l4 valign-wrapper ">
+        <div>
+          <h5>Steampunk</h5>
+          <p>One of my favorite topics to talk about is Steampunk. It's a genre, scene, style and a lifestyle. Steampunk usually plays in a victorian fantasy scenario.</p>
+        </div>
       </div>
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Steampunk</h5>
-        <p>One of my favorite topics to talk about is Steampunk. It's a genre, scene, style and a lifestyle. Steampunk usually plays in a victorian fantasy scenario.</p>
+      <div class="card col s12 m6 l4 valign-wrapper">
+        <div>
+          <h5>Cyberpunk</h5>
+          <p>Yet another of my favorite topics, following the same vein as Steampunk. The difference here is that Cyberpunk plays in a dark dystopian future (as thought of from an 80s perspective). Big works that influenced me here were most of William Gibson's books, as well as the pen-and-paper Shadowrun.</p>
+        </div>
       </div>
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Cyberpunk</h5>
-        <p>Yet another of my favorite topics, following the same vein as Steampunk. The difference here is that Cyberpunk plays in a dark dystopian future (as thought of from an 80s perspective). Big works that influenced me here were most of William Gibson's books, as well as the pen-and-paper Shadowrun.</p>
+      <div class="card col s12 m6 l4 valign-wrapper">
+        <div>
+          <h5>Programming</h5>
+          <p>Kinda plays into the Cyberpunk that I like so much, I like programming while listening to some chill beats.</p>
+        </div>
       </div>
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Programming</h5>
-        <p>Kinda plays into the Cyberpunk that I like so much, I like programming while listening to some chill beats.</p>
+      <div class="card col s12 m6 l4 valign-wrapper">
+        <div>
+          <h5>Music</h5>
+          <p>Metal, Cabaret, some Pop, some Soundtracks (Made in Abyss by Kevin Penkin) as well as most things electronic I'm constantly listening to. There's only a few things that you will never hear me listen to, german Schlager, gangster Rap, etc.</p>
+        </div>
       </div>
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Music</h5>
-        <p>Metal, Cabaret, some Pop, some Soundtracks (Made in Abyss by Kevin Penkin) as well as most things electronic I'm constantly listening to. There's only a few things that you will never hear me listen to, german Schlager, gangster Rap, etc.</p>
+      <div class="card col s12 m6 l4 valign-wrapper">
+        <div>
+          <h5>Made in Abyss</h5>
+          <p>I'm a bit of a weeb so I like and have watched plenty of Manga and Anime. My absolute favorite out of the literal over 100 is by far Made in Abyss. It is a tragic and beautiful journey filled with blessings and curses.</p>
+        </div>
       </div>
 
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Made in Abyss</h5>
-        <p>I'm a bit of a weeb so I like and have watched plenty of Manga and Anime. My absolute favorite out of the literal over 100 is by far Made in Abyss. It is a tragic and beautiful journey filled with blessings and curses.</p>
-      </div>
-
-      <div class="card center col s12 m6 l6 valign-wrapper">
-        <h5>Lord of the Rings</h5>
-        <p>Having first read the books as a child and then later watched all of the movies, I can say that Tolkien's worldbuilding is inspiring and fascinating. I've also read a lot of his lesser known works, such as the Silmarillion (that was a big pain to sit through!).</p>
+      <div class="card col s12 m6 l4 valign-wrapper">
+        <div>
+          <h5>Lord of the Rings</h5>
+          <p>Having first read the books as a child and then later watched all of the movies, I can say that Tolkien's worldbuilding is inspiring and fascinating. I've also read a lot of his lesser known works, such as the Silmarillion (that was a big pain to sit through!).</p>
+        </div>
       </div>
 
       <!--<div class="card center col s12 m6 l6 valign-wrapper">
@@ -87,7 +103,7 @@
       </div>-->
 
     </div>
-  </div>
+  </main>
 
   <footer class="page-footer teal white-text">
     <div class="container">
@@ -115,7 +131,7 @@
   </footer>
 
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large black" href="#container">
+    <a class="btn-floating btn-large black" href="#top">
       <i class="fa-solid fa-angle-up"></i>
     </a>
   </div>
