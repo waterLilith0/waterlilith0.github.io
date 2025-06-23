@@ -22,7 +22,7 @@
   .light-mode .nav-wrapper,
   .light-mode .nav-wrapper.teal,
   .light-mode .nav-wrapper.primary-color { /* Assuming primary-color is like teal */
-    background-color: #e9ecef !important;
+    background-color: #ffffff !important; /* Changed to white */
   }
 
     .light-mode .nav-wrapper a, /* Target links within nav-wrapper */
