@@ -27,4 +27,15 @@ body {
 
 main {
   flex-grow: 1;
+  /* Add margin to account for fixed navbar height */
+  /* Materialize default navbar height is 64px on desktop, 56px on mobile */
+  /* Using a general value here, can be adjusted with media queries if needed */
+  margin-top: 64px;
+}
+
+/* Adjust margin for smaller screens if navbar height changes */
+@media only screen and (max-width: 992px) {
+  main {
+    margin-top: 56px;
+  }
 }

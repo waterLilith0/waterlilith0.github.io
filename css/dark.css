@@ -59,6 +59,188 @@
     color: #ecf0f1 !important;
   }
 
+/* Sidenav Styles */
+.dark-mode-v1 .sidenav {
+  background-color: #2c3e50; /* Match main dark background or slightly lighter/darker */
+}
+.dark-mode-v1 .sidenav li > a,
+.dark-mode-v1 .sidenav li > a > i.material-icons {
+  color: #ecf0f1; /* Standard text color for dark mode */
+}
+.dark-mode-v1 .sidenav li > a > i.fa-brands { /* For Font Awesome icons */
+  color: #ecf0f1;
+}
+.dark-mode-v1 .sidenav li > a > i.fa-brands { /* For Font Awesome icons */
+  color: #ecf0f1;
+}
+.dark-mode-v1 .sidenav li:hover {
+  background-color: #34495e; /* Hover color, match card background */
+}
+/* Divider if any */
+.dark-mode-v1 .sidenav li.divider {
+  background-color: #7f8c8d; /* Border color */
+}
+
+/* Galleria Theme Styles */
+.dark-mode-v1 .galleria-theme-folio {
+  color: #ecf0f1; /* Base text color */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-stage {
+  background-color: #1c2833; /* Darker than main background, but not pure black */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-thumbnails .galleria-image {
+  background-color: #2c3e50; /* Match card/main background */
+  border: 1px solid #34495e; /* Subtle border */
+}
+
+.dark-mode-v1 .galleria-theme-folio.dark .galleria-thumbnails .galleria-image {
+  /* Override default dark galleria if needed, or ensure consistency */
+  background-color: #2c3e50;
+  border: 1px solid #34495e;
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-thumbnails .galleria-image:hover {
+  background-color: #34495e;
+  border-color: #7f8c8d;
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-thumb-selected .galleria-image, /* Assuming a class for selected, might need to check galleria docs */
+.dark-mode-v1 .galleria-theme-folio .galleria-thumbnails .galleria-image.active { /* Common class for active thumbnail */
+  background-color: #34556e; /* Slightly different background for active/selected */
+  border-color: #3498db; /* Accent border */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-loader {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark loader background */
+  /* loader.gif is already dark-friendly, if not, use filter: invert(1) or replace */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-info {
+  background-color: rgba(26, 37, 47, 0.85); /* Dark, semi-transparent, matches .nav-wrapper */
+  color: #ecf0f1;
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-info-description {
+  color: #bdc3c7; /* Lighter grey for description */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-plus {
+  background-color: rgba(26, 37, 47, 0.7);
+  color: #ecf0f1;
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-plus span {
+  background-color: rgba(0,0,0,0.5); /* Default is fine */
+  color: #ecf0f1;
+}
+
+/* For PNG icons like close, nav arrows - if they are dark on transparent, they are fine. */
+/* If they are light on transparent, they'd need filter: invert(1) for dark theme, */
+/* but folio theme's default assets seem okay for dark backgrounds. */
+/* Example: if icons were white and needed to be dark: */
+/* .dark-mode-v1 .galleria-theme-folio .galleria-close { filter: invert(1); } */
+
+.dark-mode-v1 .galleria-theme-folio .galleria-counter {
+  color: #ecf0f1; /* Ensure counter text is visible */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-preloader {
+  background-color: rgba(236, 240, 241, 0.2); /* Light preloader track on dark bg */
+}
+
+.dark-mode-v1 .galleria-theme-folio .galleria-loaded {
+  background-color: #3498db; /* Accent color for loaded part */
+}
+
+/* Lightbox styles if using Galleria's own lightbox (folio theme might integrate this) */
+.dark-mode-v1 .galleria-lightbox-content {
+    background-color: #1c2833; /* Similar to stage */
+    color: #ecf0f1;
+}
+.dark-mode-v1 .galleria-lightbox-image {
+    border-color: #34495e;
+}
+/* Close button for lightbox, etc. */
+.dark-mode-v1 .galleria-lightbox-close {
+    color: #ecf0f1; /* Or use image that fits */
+}
+
+/* Lightgallery Overrides (if used by Galleria lightbox) */
+.dark-mode-v1 .lg-backdrop {
+  background-color: rgba(26, 37, 47, 0.85); /* Similar to nav/galleria info */
+}
+.dark-mode-v1 .lg-outer .lg-content {
+  background-color: #1c2833; /* Similar to galleria stage */
+}
+.dark-mode-v1 .lg-toolbar {
+  background-color: rgba(26, 37, 47, 0.95); /* Darker, more opaque */
+}
+.dark-mode-v1 .lg-toolbar .lg-icon {
+  color: #ecf0f1;
+  background-color: transparent; /* Ensure no default light bg */
+}
+.dark-mode-v1 .lg-toolbar .lg-icon:hover {
+  color: #3498db;
+}
+.dark-mode-v1 .lg-sub-html {
+  background-color: rgba(26, 37, 47, 0.85);
+  color: #ecf0f1;
+}
+.dark-mode-v1 .lg-outer .lg-img-wrap .lg-image {
+  border: 4px solid #34495e;
+}
+.dark-mode-v1 .lg-outer .lg-thumb-outer .lg-thumb-item {
+  border: 2px solid transparent;
+  background-color: #2c3e50;
+}
+.dark-mode-v1 .lg-outer .lg-thumb-outer .lg-thumb-item.active,
+.dark-mode-v1 .lg-outer .lg-thumb-outer .lg-thumb-item:hover {
+  border-color: #3498db;
+}
+.dark-mode-v1 .lg-progress-bar .lg-progress {
+  background-color: #3498db;
+}
+/* Ensure icons like close, next, prev are visible */
+.dark-mode-v1 .lg-actions .lg-next,
+.dark-mode-v1 .lg-actions .lg-prev {
+    color: #ecf0f1;
+    background-color: rgba(26, 37, 47, 0.5);
+}
+.dark-mode-v1 .lg-actions .lg-next:hover,
+.dark-mode-v1 .lg-actions .lg-prev:hover {
+    color: #3498db;
+}
+
+/* Custom Scrollbar (Webkit browsers) */
+.dark-mode-v1 ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.dark-mode-v1 ::-webkit-scrollbar-track {
+  background: #2c3e50; /* Match body background */
+}
+.dark-mode-v1 ::-webkit-scrollbar-thumb {
+  background-color: #34495e; /* Match card background */
+  border-radius: 6px;
+  border: 3px solid #2c3e50; /* Match body background to create padding effect */
+}
+.dark-mode-v1 ::-webkit-scrollbar-thumb:hover {
+  background-color: #4a6074;
+}
+
+/* Custom Text Selection */
+.dark-mode-v1 ::selection {
+  background-color: #3498db; /* Accent color */
+  color: #ecf0f1; /* Text color for selection */
+}
+.dark-mode-v1 ::-moz-selection { /* Firefox */
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+
+
   .dark-mode-v1 .btn,
   .dark-mode-v1 .btn-large,
   .dark-mode-v1 .btn-small {

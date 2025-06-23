@@ -392,6 +392,194 @@
     color: #333333 !important;
   }
 
+/* Sidenav Styles */
+.light-mode .sidenav {
+  background-color: #f8f9fa; /* Light grey, common for sidebars */
+}
+.light-mode .sidenav li > a,
+.light-mode .sidenav li > a > i.material-icons {
+  color: #343a40; /* Dark text for light mode */
+}
+.light-mode .sidenav li > a > i.fa-brands { /* For Font Awesome icons */
+  color: #343a40;
+}
+.light-mode .sidenav li:hover {
+  background-color: #e9ecef; /* Hover color, match navbar background */
+}
+/* Divider if any */
+.light-mode .sidenav li.divider {
+  background-color: #dddddd; /* Light grey border */
+}
+
+/* Galleria Theme Styles */
+.light-mode .galleria-theme-folio {
+  color: #333333; /* Base text color */
+}
+
+.light-mode .galleria-theme-folio .galleria-stage {
+  background-color: #e9ecef; /* Light grey, similar to navbar or cards */
+}
+
+.light-mode .galleria-theme-folio .galleria-thumbnails .galleria-image {
+  background-color: #ffffff; /* White background for thumbnails */
+  border: 1px solid #dddddd; /* Light grey border */
+}
+
+.light-mode .galleria-theme-folio .galleria-thumbnails .galleria-image:hover {
+  background-color: #f8f9fa;
+  border-color: #ced4da;
+}
+
+.light-mode .galleria-theme-folio .galleria-thumb-selected .galleria-image,
+.light-mode .galleria-theme-folio .galleria-thumbnails .galleria-image.active {
+  background-color: #e0e0e0;
+  border-color: #007bff; /* Accent border */
+}
+
+.light-mode .galleria-theme-folio .galleria-loader {
+  background-color: rgba(255, 255, 255, 0.8); /* Light loader background */
+  /* Consider filter: invert(1) on loader.gif if it's dark, or use a light-friendly gif */
+  /* Default folio loader.gif is dark, so it needs inversion or replacement for light theme */
+}
+.light-mode .galleria-theme-folio .galleria-loader img { /* If loader is an img tag */
+    filter: invert(1);
+}
+
+
+.light-mode .galleria-theme-folio .galleria-info {
+  background-color: rgba(248, 249, 250, 0.85); /* Light, semi-transparent */
+  color: #333333;
+  border: 1px solid #dddddd;
+}
+
+.light-mode .galleria-theme-folio .galleria-info-description {
+  color: #555555;
+}
+
+.light-mode .galleria-theme-folio .galleria-plus {
+  background-color: rgba(233, 236, 239, 0.7);
+  color: #333333;
+}
+.light-mode .galleria-theme-folio .galleria-plus span {
+  background-color: rgba(255,255,255,0.5);
+  color: #333333;
+  border: 1px solid #eee;
+}
+
+/* For PNG icons like close, nav arrows - folio's default are dark on transparent. */
+/* They need to be inverted for light theme. */
+.light-mode .galleria-theme-folio .galleria-close,
+.light-mode .galleria-theme-folio .galleria-image-nav-left,
+.light-mode .galleria-theme-folio .galleria-image-nav-right {
+  filter: invert(1);
+}
+.light-mode .galleria-theme-folio .galleria-image-nav-left:hover,
+.light-mode .galleria-theme-folio .galleria-image-nav-right:hover {
+  /* Keep filter or adjust if hover images are different and also need inversion */
+  filter: invert(1) brightness(0.8); /* Example adjustment */
+}
+
+
+.light-mode .galleria-theme-folio .galleria-counter {
+  color: #333333;
+}
+
+.light-mode .galleria-theme-folio .galleria-preloader {
+  background-color: rgba(0, 0, 0, 0.1); /* Darker preloader track on light bg */
+}
+
+.light-mode .galleria-theme-folio .galleria-loaded {
+  background-color: #007bff; /* Accent color for loaded part */
+}
+
+/* Lightbox styles if using Galleria's own lightbox */
+.light-mode .galleria-lightbox-content {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dddddd;
+}
+.light-mode .galleria-lightbox-image {
+    border-color: #ced4da;
+}
+.light-mode .galleria-lightbox-close {
+    filter: invert(1); /* If it's a dark icon */
+    /* color: #333333; */ /* Or if it's a text/font icon */
+}
+
+/* Lightgallery Overrides (if used by Galleria lightbox) */
+.light-mode .lg-backdrop {
+  background-color: rgba(248, 249, 250, 0.85);
+}
+.light-mode .lg-outer .lg-content {
+  background-color: #ffffff;
+}
+.light-mode .lg-toolbar {
+  background-color: rgba(233, 236, 239, 0.95); /* Light grey, similar to nav */
+}
+.light-mode .lg-toolbar .lg-icon {
+  color: #343a40; /* Dark icons on light toolbar */
+}
+.light-mode .lg-toolbar .lg-icon:hover {
+  color: #007bff; /* Accent color on hover */
+}
+.light-mode .lg-sub-html {
+  background-color: rgba(233, 236, 239, 0.85);
+  color: #333333;
+}
+.light-mode .lg-outer .lg-img-wrap .lg-image {
+  border: 4px solid #e9ecef;
+}
+.light-mode .lg-outer .lg-thumb-outer .lg-thumb-item {
+  border: 2px solid transparent;
+  background-color: #f8f9fa;
+}
+.light-mode .lg-outer .lg-thumb-outer .lg-thumb-item.active,
+.light-mode .lg-outer .lg-thumb-outer .lg-thumb-item:hover {
+  border-color: #007bff;
+}
+.light-mode .lg-progress-bar .lg-progress {
+  background-color: #007bff;
+}
+/* Ensure icons like close, next, prev are visible and inverted if they are SVGs/font icons that are dark by default */
+.light-mode .lg-actions .lg-next,
+.light-mode .lg-actions .lg-prev {
+    color: #343a40;
+    background-color: rgba(233, 236, 239, 0.5);
+}
+.light-mode .lg-actions .lg-next:hover,
+.light-mode .lg-actions .lg-prev:hover {
+    color: #007bff;
+}
+/* If lightgallery uses font icons that are dark, they might need filter: invert(1) or color changes */
+/* The default lightgallery icons are font-based and should pick up color property. */
+
+/* Custom Scrollbar (Webkit browsers) */
+.light-mode ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.light-mode ::-webkit-scrollbar-track {
+  background: #f4f4f4; /* Match body background */
+}
+.light-mode ::-webkit-scrollbar-thumb {
+  background-color: #adb5bd; /* A neutral grey */
+  border-radius: 6px;
+  border: 3px solid #f4f4f4; /* Match body background */
+}
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #909aa2;
+}
+
+/* Custom Text Selection */
+.light-mode ::selection {
+  background-color: #007bff; /* Accent color */
+  color: #ffffff; /* Text color for selection */
+}
+.light-mode ::-moz-selection { /* Firefox */
+  background-color: #007bff;
+  color: #ffffff;
+}
+
   .light-mode .footer-copyright.teal.lighten-3,
   .light-mode .footer-copyright.primary-color-dark {
     background-color: #d4d8db !important;
