@@ -3,7 +3,9 @@ import json
 from PIL import Image
 from PIL.ExifTags import TAGS
 from datetime import datetime
+import sys
 
+# This helper function remains unchanged.
 def get_image_date(image_path):
     """Extracts the creation date from image EXIF data."""
     try:
@@ -13,80 +15,95 @@ def get_image_date(image_path):
             for tag_id in exif_data:
                 tag = TAGS.get(tag_id, tag_id)
                 data = exif_data.get(tag_id)
-                if tag == "DateTime":
+                # The 'DateTimeOriginal' tag is often more accurate than 'DateTime'
+                if tag in ("DateTime", "DateTimeOriginal"):
                     date_str = data
                     try:
                         return datetime.strptime(date_str, '%Y:%m:%d %H:%M:%S')
-                    except ValueError:
-                        pass  # Handle different date formats if needed
-    except (FileNotFoundError, OSError, AttributeError):
-        pass  # Handle cases where image is not found or EXIF data is missing
-    return datetime.min  # Default to min date if no EXIF data found
+                    except (ValueError, TypeError):
+                        pass  # Handle different date formats or data types if needed
+    except (FileNotFoundError, OSError, AttributeError) as e:
+        # It's good practice to know why it failed.
+        # print(f"Warning: Could not read EXIF data from {image_path}. Reason: {e}", file=sys.stderr)
+        pass
+    # Default to a very old date if no EXIF data is found to ensure it sorts last.
+    return datetime.min
 
-# --- MODIFIED FUNCTION ---
-# This function now ignores files that start with 'resized_'
-def get_images_from_folder(folder_path):
-    """Gets a list of original image filenames and their creation dates from a folder."""
-    images = []
-    for filename in os.listdir(folder_path):
-        # --- THIS IS THE FIX ---
-        # Skip any files that are already thumbnails to avoid duplication.
-        if filename.lower().startswith('resized_'):
-            continue
+# --- NEW CORE FUNCTION ---
+def process_folder(folder_path):
+    """
+    Scans a folder, pairs original images with their 'resized_' counterparts,
+    extracts metadata, and returns a list of data dictionaries.
+    This function is case-insensitive when matching but preserves original capitalization.
+    """
+    try:
+        all_files = os.listdir(folder_path)
+    except FileNotFoundError:
+        print(f"Error: Folder not found at '{folder_path}'", file=sys.stderr)
+        return []
 
-        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
-            image_path = os.path.join(folder_path, filename)
-            date = get_image_date(image_path)
-            images.append((filename, date))
-    return images
+    image_extensions = ('.png', '.jpg', '.jpeg', '.gif', '.bmp')
+    originals = {}
+    resized_map = {}
 
-def find_resized_thumb(folder, original_filename):
-    """Checks for a 'resized_' version of an image and returns its path if it exists."""
-    # We use os.path.splitext to handle filenames with multiple dots correctly.
-    base_name, ext = os.path.splitext(original_filename)
-    
-    # Rebuild filename to check for resized versions with different original capitalization.
-    # This is more robust but for now we assume consistent naming.
-    resized_filename = f"resized_{original_filename}"
+    # 1. First, categorize all files into originals and a resized map
+    for filename in all_files:
+        lower_filename = filename.lower()
+        if not lower_filename.endswith(image_extensions):
+            continue  # Skip non-image files
 
-    resized_path = os.path.join("pics", folder, resized_filename)
-    
-    # To be more robust, we should check for any file named 'resized_{...}' that matches
-    # regardless of the original's case. For now, let's assume the naming is consistent.
-    # A more advanced check could iterate directory contents.
-    if os.path.exists(resized_path):
-        return f"pics/{folder}/{resized_filename}"
+        if lower_filename.startswith('resized_'):
+            # Create a map from the original's expected lower-case name to the
+            # actual, case-preserved resized filename.
+            # e.g., 'image.jpg' -> 'resized_Image.JPG'
+            base_name = lower_filename[len('resized_'):]
+            resized_map[base_name] = filename
+        else:
+            # Store the original's actual, case-preserved filename.
+            # e.g., 'image.jpg' -> 'Image.JPG'
+            originals[lower_filename] = filename
+
+    # 2. Now, build the final data structure by pairing them up
+    processed_images = []
+    for lower_name, original_filename in originals.items():
         
-    return None
+        # Find the matching resized file from our map
+        resized_filename = resized_map.get(lower_name)
 
-def generate_data_structure(images, folder):
-    """Generates a list of dictionaries with 'thumb', 'image', and 'big' keys."""
-    data = []
-    for filename, _ in images:
-        full_image_path = f'pics/{folder}/{filename}'
-        thumb_path = find_resized_thumb(folder, filename)
+        if not resized_filename:
+            print(
+                f"Warning: No corresponding 'resized_' file found for '{original_filename}' in '{folder_path}'. Skipping.",
+                file=sys.stderr
+            )
+            continue
+            
+        # Use os.path.join to create the system path, then format for the web
+        full_image_path = os.path.join(folder_path, original_filename).replace(os.sep, '/')
+        thumb_path = os.path.join(folder_path, resized_filename).replace(os.sep, '/')
+        
+        # Get the date from the original full-size image
+        # We need the local system path for PIL to open the file
+        date = get_image_date(os.path.join(folder_path, original_filename))
 
-        # If a resized thumbnail isn't found, use the original image path for the thumb
-        if not thumb_path:
-            thumb_path = full_image_path
-
-        data.append({
+        processed_images.append({
             'thumb': thumb_path,
-            'image': thumb_path,
-            'big': full_image_path
+            'image': thumb_path,  # 'image' and 'thumb' point to the same resized file
+            'big': full_image_path,
+            'date': date # Store date for sorting
         })
-    return data
+        
+    return processed_images
 
-def output_javascript_literal(irl_data, vrc_data):
+
+def output_javascript_literal(data_list):
     """Combines data and prints it as a JavaScript object literal string."""
-    combined_data = irl_data + vrc_data
-    
     print("var data = [")
 
-    object_strings = []
-    for item in combined_data:
-        s = f"    {{thumb: '{item['thumb']}', image: '{item['image']}', big: '{item['big']}'}}"
-        object_strings.append(s)
+    # The data_list is already sorted and contains all the correct path strings
+    object_strings = [
+        f"    {{thumb: '{item['thumb']}', image: '{item['image']}', big: '{item['big']}'}}"
+        for item in data_list
+    ]
 
     print(",\n".join(object_strings))
 
@@ -97,13 +114,15 @@ if __name__ == "__main__":
     irl_folder = 'pics/irl'
     vrc_folder = 'pics/vrc'
 
-    irl_images = get_images_from_folder(irl_folder)
-    vrc_images = get_images_from_folder(vrc_folder)
+    # Process each folder to get a list of dictionaries
+    irl_data = process_folder(irl_folder)
+    vrc_data = process_folder(vrc_folder)
 
-    irl_images.sort(key=lambda x: x[1])
-    vrc_images.sort(key=lambda x: x[1])
+    # Combine the data from both folders
+    combined_data = irl_data + vrc_data
 
-    irl_data = generate_data_structure(irl_images, 'irl')
-    vrc_data = generate_data_structure(vrc_images, 'vrc')
+    # Sort the combined list by the 'date' key we stored in each dictionary
+    combined_data.sort(key=lambda x: x['date'], reverse=True) # Sort newest first
 
-    output_javascript_literal(irl_data, vrc_data)
+    # Generate the final JavaScript output
+    output_javascript_literal(combined_data)
