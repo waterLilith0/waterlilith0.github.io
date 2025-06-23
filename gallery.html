@@ -19,19 +19,20 @@
   <title>Gallery | waterLilith</title>
 </head>
 
-<body class="grey darken-3 dark-mode-v1">
+<body class="grey darken-3">
 
-  <nav>
-    <div class="nav-wrapper teal white-text">
-      <!-- These classes will be overridden by themes -->
-      <a href="index.html" class="brand-logo white-text">waterLilith</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
-        <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i></a></li>
-        <li>
-          <div class="switch">
-            <label>
-              <input type="checkbox" id="darkModeToggle">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal white-text"> <!-- Keep teal for specific gallery navbar styling -->
+        <a href="index.html" class="brand-logo white-text">waterLilith</a>
+        <a href="#" data-target="mobile-sidenav-gallery" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
+          <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i></a></li>
+          <li>
+            <div class="switch">
+              <label>
+                <input type="checkbox" id="darkModeToggle">
               <span class="lever"></span>
             </label>
           </div>
@@ -39,6 +40,14 @@
       </ul>
     </div>
   </nav>
+</div>
+
+  <ul class="sidenav" id="mobile-sidenav-gallery">
+    <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i> Github</a></li>
+    <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i> Bluesky</a></li>
+    <!-- Link to index.html can be added if desired, or other gallery-specific links -->
+    <li><a href="index.html">Home</a></li>
+  </ul>
 
   <main class="container galleria"></main>
 

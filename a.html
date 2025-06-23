@@ -14,12 +14,13 @@
   <title>A | waterLilith</title>
 </head>
 
-<body class="grey darken-3 dark-mode-v1">
+<body class="grey darken-3">
 
+<div class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper teal white-text">
-      <!-- These classes will be overridden by themes -->
+    <div class="nav-wrapper"> <!-- Removed teal white-text for default theme styling -->
       <a href="index.html" class="brand-logo white-text">waterLilith</a>
+      <a href="#" data-target="mobile-sidenav-a" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i></a></li>
@@ -35,6 +36,14 @@
       </ul>
     </div>
   </nav>
+</div>
+
+<ul class="sidenav" id="mobile-sidenav-a">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i> Github</a></li>
+  <li><a href="https://bsky.app/profile/waterlilith.bsky.social"><i class="fa-brands fa-bluesky"></i> Bluesky</a></li>
+</ul>
 
   <main class="container cyan lighten-4">
     <div class="row">
