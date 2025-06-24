@@ -25,6 +25,822 @@ body {
     margin-inline: 1vw;
   }
 
-main {
-  flex-grow: 1;
+.light-mode .nav-wrapper { /* More specific selector for navbar background */
+  background-color: #e9ecef !important;
+}
+
+.light-mode .nav-wrapper a, /* Target links within nav-wrapper */
+.light-mode .nav-wrapper i { /* Target icons within nav-wrapper */
+  color: #343a40 !important;
+}
+
+.light-mode .nav-wrapper .brand-logo { /* Ensure brand logo is also dark */
+  color: #343a40 !important;
+}
+
+.light-mode .footer.page-footer { /* More specific selector for footer */
+  background-color: #dee2e6 !important;
+  color: #495057 !important;
+}
+
+.light-mode .footer.page-footer .footer-copyright {
+    background-color: rgba(0,0,0,0.06) !important;
+    color: #495057 !important;
+}
+
+.light-mode .footer.page-footer a { /* Links in footer */
+    color: #007bff !important;
+}
+
+
+/* Buttons */
+.light-mode .btn,
+.light-mode .btn-large,
+.light-mode .btn-small {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.light-mode .btn:hover,
+.light-mode .btn-large:hover,
+.light-mode .btn-small:hover {
+  background-color: #0056b3;
+}
+
+.light-mode .btn-floating {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.light-mode .btn-floating:hover {
+  background-color: #0056b3;
+}
+
+.light-mode .btn-floating.black {
+    background-color: #007bff !important;
+}
+.light-mode .btn-floating.black:hover {
+    background-color: #0056b3 !important;
+}
+
+
+.light-mode .btn-flat {
+  color: #007bff;
+}
+.light-mode .btn-flat:hover,
+.light-mode .btn-flat:focus {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Forms */
+.light-mode input:not([type]),
+.light-mode input[type=text]:not(.browser-default),
+.light-mode input[type=password]:not(.browser-default),
+.light-mode input[type=email]:not(.browser-default),
+.light-mode input[type=url]:not(.browser-default),
+.light-mode input[type=time]:not(.browser-default),
+.light-mode input[type=date]:not(.browser-default),
+.light-mode input[type=datetime]:not(.browser-default),
+.light-mode input[type=datetime-local]:not(.browser-default),
+.light-mode input[type=tel]:not(.browser-default),
+.light-mode input[type=number]:not(.browser-default),
+.light-mode input[type=search]:not(.browser-default),
+.light-mode textarea.materialize-textarea {
+  color: #495057;
+  border-bottom: 1px solid #ced4da;
+}
+.light-mode input:not([type]):focus:not([readonly]),
+.light-mode input[type=text]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=password]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=email]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=url]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=time]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=date]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=tel]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=number]:not(.browser-default):focus:not([readonly]),
+.light-mode input[type=search]:not(.browser-default):focus:not([readonly]),
+.light-mode textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #007bff;
+  box-shadow: 0 1px 0 0 #007bff;
+}
+.light-mode input:not([type]):focus:not([readonly]) + label,
+.light-mode input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+.light-mode textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #007bff;
+}
+.light-mode ::-webkit-input-placeholder { color: #6c757d; }
+.light-mode ::-moz-placeholder { color: #6c757d; opacity: 1; }
+.light-mode :-ms-input-placeholder { color: #6c757d; }
+.light-mode ::placeholder { color: #6c757d; }
+
+
+.light-mode .select-wrapper input.select-dropdown {
+  color: #495057;
+  border-bottom: 1px solid #ced4da;
+}
+.light-mode .dropdown-content {
+  background-color: #ffffff;
+  color: #333333;
+}
+.light-mode .dropdown-content li:hover, .light-mode .dropdown-content li.active {
+  background-color: #e9ecef;
+}
+ .light-mode .dropdown-content li>a, .light-mode .dropdown-content li>span {
+    color: #333333;
+}
+ .light-mode .select-wrapper .caret {
+  fill: #333333;
+}
+
+.light-mode [type="checkbox"] + span:not(.lever):before,
+.light-mode [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+  border: 2px solid #5a5a5a;
+}
+.light-mode [type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
+}
+.light-mode [type="checkbox"].filled-in + span:not(.lever):after {
+   border: 2px solid #5a5a5a;
+}
+.light-mode [type="checkbox"].filled-in:checked + span:not(.lever):after {
+  border: 2px solid #007bff;
+  background-color: #007bff;
+}
+
+
+.light-mode [type="radio"]:not(:checked) + span:before,
+.light-mode [type="radio"]:not(:checked) + span:after {
+  border: 2px solid #5a5a5a;
+}
+.light-mode [type="radio"]:checked + span:after,
+.light-mode [type="radio"].with-gap:checked + span:before,
+.light-mode [type="radio"].with-gap:checked + span:after {
+  border: 2px solid #007bff;
+}
+.light-mode [type="radio"]:checked + span:after,
+.light-mode [type="radio"].with-gap:checked + span:after {
+  background-color: #007bff;
+}
+
+.light-mode .switch label input[type=checkbox]:checked + .lever {
+  background-color: #79c3ff;
+}
+.light-mode .switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #007bff;
+}
+ .light-mode .switch label .lever {
+  background-color: #adb5bd;
+}
+.light-mode .switch label .lever:after {
+  background-color: #f8f9fa;
+}
+
+
+.light-mode input[type=range]::-webkit-slider-thumb {
+  background: #007bff;
+}
+.light-mode input[type=range]::-moz-range-thumb {
+  background: #007bff;
+}
+.light-mode input[type=range]::-ms-thumb {
+  background: #007bff;
+}
+ .light-mode input[type=range]::-webkit-slider-runnable-track {
+  background: #ced4da;
+}
+.light-mode input[type=range]::-moz-range-track {
+  background: #ced4da;
+}
+.light-mode input[type=range]::-ms-track {
+  background: #ced4da;
+}
+.light-mode input[type=range]+.thumb .value {
+    color: #333333;
+}
+
+
+/* Collections */
+.light-mode .collection {
+  border: 1px solid #dddddd;
+}
+.light-mode .collection .collection-item {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+.light-mode .collection a.collection-item {
+  color: #007bff;
+}
+.light-mode .collection a.collection-item:hover {
+  background-color: #f8f9fa;
+}
+ .light-mode .collection .collection-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* Badges */
+.light-mode span.badge {
+  background-color: #e9ecef;
+  color: #495057;
+}
+.light-mode span.badge.new {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Toasts */
+.light-mode .toast {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+/* Modals */
+.light-mode .modal {
+  background-color: #ffffff;
+  color: #333333;
+}
+.light-mode .modal-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dddddd;
+}
+
+/* Collapsibles */
+.light-mode .collapsible-header {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+.light-mode .collapsible-body {
+  background-color: #f8f9fa;
+  color: #333333;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Tabs */
+.light-mode .tabs {
+    background-color: #ffffff;
+}
+.light-mode .tabs .tab a {
+  color: rgba(0, 123, 255, 0.7);
+}
+.light-mode .tabs .tab a:hover,
+.light-mode .tabs .tab a.active {
+  color: #007bff;
+}
+.light-mode .tabs .indicator {
+  background-color: #007bff;
+}
+
+/* Preloaders/Spinners */
+.light-mode .spinner-layer {
+  border-color: #007bff;
+}
+.light-mode .spinner-blue-only .spinner-layer { border-color: #007bff !important; }
+.light-mode .spinner-red-only .spinner-layer { border-color: #dc3545 !important; }
+.light-mode .spinner-yellow-only .spinner-layer { border-color: #ffc107 !important; }
+.light-mode .spinner-green-only .spinner-layer { border-color: #28a745 !important; }
+
+/* --- Light Mode Materialize Overrides --- */
+.light-mode .nav-wrapper.teal,
+.light-mode .nav-wrapper.primary-color { /* Assuming primary-color is like teal */
+  background-color: #e9ecef !important;
+}
+.light-mode .nav-wrapper.teal a,
+.light-mode .nav-wrapper.teal i,
+.light-mode .nav-wrapper.primary-color a,
+.light-mode .nav-wrapper.primary-color i {
+  color: #343a40 !important;
+}
+
+.light-mode .page-footer.teal,
+.light-mode .page-footer.primary-color {
+  background-color: #dee2e6 !important;
+  color: #495057 !important;
+}
+.light-mode .page-footer.teal a,
+.light-mode .page-footer.primary-color a {
+  color: #007bff !important;
+}
+
+.light-mode .container.teal.lighten-2, /* Main content area on index.html */
+.light-mode .container.primary-color-light {
+    background-color: #f4f4f4 !important;
+    color: #333333 !important;
+}
+.light-mode .footer-copyright.teal.lighten-3,
+.light-mode .footer-copyright.primary-color-dark {
+    background-color: #d4d8db !important;
+    color: #333333 !important;
+}
+
+.light-mode .white-text {
+    color: #343a40 !important;
+}
+.light-mode .black-text {
+    color: #333333 !important;
+}
+.light-mode .grey-text {
+    color: #545454 !important; /* Example general grey text */
+}
+.light-mode .grey-text.text-lighten-2 {
+    color: #0056b3 !important; /* Darker blue link for footer */
+}
+.light-mode .grey-text.text-darken-2 {
+    color: #0056b3 !important; /* Darker blue link for footer */
+}
+.light-mode .grey.darken-3 { /* Original body class */
+    background-color: #f4f4f4 !important;
+    color: #333333 !important;
+}
+
+
+/* Dark Mode Styles */
+
+/* Version 1: Cool Grey */
+.dark-mode-v1 {
+  background-color: #2c3e50; /* Dark Slate Blue */
+  color: #ecf0f1; /* Clouds */
+}
+
+.dark-mode-v1 a {
+  color: #3498db; /* Peter River */
+}
+
+.dark-mode-v1 .card,
+.dark-mode-v1 .panel {
+  background-color: #34495e; /* Wet Asphalt */
+  border-color: #7f8c8d; /* Asbestos */
+}
+
+.dark-mode-v1 .navbar { /* Default navbar styling if no specific M class */
+  background-color: #1a252f;
+  border-bottom-color: #2c3e50;
+}
+.dark-mode-v1 .navbar a {
+  color: #ecf0f1;
+}
+
+.dark-mode-v1 .footer.page-footer { /* Default footer styling if no specific M class */
+  background-color: #1a252f;
+  color: #bdc3c7;
+  border-top-color: #2c3e50;
+}
+.dark-mode-v1 .footer.page-footer .footer-copyright {
+    background-color: #121b22 !important;
+    color: #bdc3c7 !important;
+}
+.dark-mode-v1 .footer.page-footer a {
+    color: #3498db !important;
+}
+
+
+/* --- V1 Component Styles --- */
+
+/* Buttons */
+.dark-mode-v1 .btn,
+.dark-mode-v1 .btn-large,
+.dark-mode-v1 .btn-small {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+.dark-mode-v1 .btn:hover,
+.dark-mode-v1 .btn-large:hover,
+.dark-mode-v1 .btn-small:hover {
+  background-color: #2980b9;
+}
+.dark-mode-v1 .btn-floating {
+  background-color: #3498db;
+}
+.dark-mode-v1 .btn-floating i {
+  color: #ecf0f1;
+}
+.dark-mode-v1 .btn-floating:hover {
+  background-color: #2980b9;
+}
+.dark-mode-v1 .btn-floating.black { /* Override specific black FAB on index */
+    background-color: #3498db !important;
+}
+.dark-mode-v1 .btn-floating.black:hover {
+    background-color: #2980b9 !important;
+}
+.dark-mode-v1 .btn-flat {
+  color: #3498db;
+}
+.dark-mode-v1 .btn-flat:hover,
+.dark-mode-v1 .btn-flat:focus {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Forms */
+.dark-mode-v1 input:not([type]),
+.dark-mode-v1 input[type=text]:not(.browser-default),
+.dark-mode-v1 input[type=password]:not(.browser-default),
+.dark-mode-v1 input[type=email]:not(.browser-default),
+.dark-mode-v1 input[type=url]:not(.browser-default),
+.dark-mode-v1 input[type=time]:not(.browser-default),
+.dark-mode-v1 input[type=date]:not(.browser-default),
+.dark-mode-v1 input[type=datetime]:not(.browser-default),
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default),
+.dark-mode-v1 input[type=tel]:not(.browser-default),
+.dark-mode-v1 input[type=number]:not(.browser-default),
+.dark-mode-v1 input[type=search]:not(.browser-default),
+.dark-mode-v1 textarea.materialize-textarea {
+  color: #ecf0f1;
+  border-bottom: 1px solid #7f8c8d;
+  background-color: transparent;
+}
+.dark-mode-v1 input:not([type]):focus:not([readonly]),
+.dark-mode-v1 input[type=text]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=password]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=email]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=url]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=time]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=date]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=tel]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=number]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 input[type=search]:not(.browser-default):focus:not([readonly]),
+.dark-mode-v1 textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #3498db;
+  box-shadow: 0 1px 0 0 #3498db;
+}
+.dark-mode-v1 input:not([type]):focus:not([readonly])+label,
+.dark-mode-v1 input[type=text]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=password]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=email]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=url]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=time]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=date]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=number]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 input[type=search]:not(.browser-default):focus:not([readonly])+label,
+.dark-mode-v1 textarea.materialize-textarea:focus:not([readonly])+label {
+  color: #3498db;
+}
+.dark-mode-v1 ::-webkit-input-placeholder { color: #bdc3c7; }
+.dark-mode-v1 :-moz-placeholder { color: #bdc3c7; opacity:  1;}
+.dark-mode-v1 ::-moz-placeholder { color: #bdc3c7; opacity:  1;}
+.dark-mode-v1 :-ms-input-placeholder { color: #bdc3c7;}
+.dark-mode-v1 ::-ms-input-placeholder { color: #bdc3c7;}
+.dark-mode-v1 ::placeholder { color: #bdc3c7;}
+
+.dark-mode-v1 .select-wrapper input.select-dropdown {
+  color: #ecf0f1;
+  border-bottom: 1px solid #7f8c8d;
+}
+.dark-mode-v1 .dropdown-content {
+  background-color: #34495e;
+}
+.dark-mode-v1 .dropdown-content li>a,
+.dark-mode-v1 .dropdown-content li>span {
+  color: #ecf0f1;
+}
+.dark-mode-v1 .dropdown-content li:hover, .dark-mode-v1 .dropdown-content li.active {
+  background-color: #2c3e50;
+}
+.dark-mode-v1 .select-wrapper .caret {
+  fill: #ecf0f1; /* Light caret for select */
+}
+
+
+.dark-mode-v1 [type="checkbox"]+span:not(.lever):before {
+  border: 2px solid #7f8c8d;
+}
+.dark-mode-v1 [type="checkbox"]:checked+span:not(.lever):before {
+  border: 2px solid transparent;
+  border-right: 2px solid #3498db;
+  border-bottom: 2px solid #3498db;
+}
+.dark-mode-v1 [type="checkbox"].filled-in:checked+span:not(.lever):after {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+.dark-mode-v1 [type="checkbox"].filled-in+span:not(.lever):after {
+  border-color: #7f8c8d;
+}
+
+.dark-mode-v1 [type="radio"]:not(:checked)+span:before,
+.dark-mode-v1 [type="radio"]:not(:checked)+span:after {
+  border: 2px solid #7f8c8d;
+}
+.dark-mode-v1 [type="radio"]:checked+span:after,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:before,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:after {
+  border: 2px solid #3498db;
+}
+.dark-mode-v1 [type="radio"]:checked+span:after,
+.dark-mode-v1 [type="radio"].with-gap:checked+span:after {
+  background-color: #3498db;
+}
+
+.dark-mode-v1 .switch label input[type=checkbox]:checked+.lever {
+  background-color: #2c85b0;
+}
+.dark-mode-v1 .switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #3498db;
+}
+.dark-mode-v1 .switch label .lever {
+  background-color: #7f8c8d;
+}
+.dark-mode-v1 .switch label .lever:after {
+  background-color: #bdc3c7;
+}
+
+.dark-mode-v1 input[type=range]::-webkit-slider-thumb {
+  background: #3498db;
+}
+.dark-mode-v1 input[type=range]::-moz-range-thumb {
+  background: #3498db;
+}
+.dark-mode-v1 input[type=range]::-ms-thumb {
+  background: #3498db;
+}
+.dark-mode-v1 input[type=range]+.thumb .value {
+    color: #ecf0f1;
+}
+.dark-mode-v1 input[type=range]::-webkit-slider-runnable-track {
+  background: #7f8c8d;
+}
+.dark-mode-v1 input[type=range]::-moz-range-track {
+  background: #7f8c8d;
+}
+.dark-mode-v1 input[type=range]::-ms-track {
+  background: #7f8c8d;
+}
+
+
+/* Collections */
+.dark-mode-v1 .collection {
+  background-color: #34495e;
+  border: 1px solid #7f8c8d;
+}
+.dark-mode-v1 .collection .collection-item {
+  background-color: #34495e;
+  color: #ecf0f1;
+  border-bottom: 1px solid #7f8c8d;
+}
+.dark-mode-v1 .collection a.collection-item {
+  color: #3498db;
+}
+.dark-mode-v1 .collection a.collection-item:hover {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+.dark-mode-v1 .collection .collection-item.active {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+
+/* Badges */
+.dark-mode-v1 span.badge.new {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+.dark-mode-v1 span.badge {
+  color: #ecf0f1;
+  background-color: #7f8c8d;
+}
+
+
+/* Toasts */
+.dark-mode-v1 .toast {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+/* Modals */
+.dark-mode-v1 .modal {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+.dark-mode-v1 .modal-footer {
+  background-color: #2c3e50;
+  border-top: 1px solid #7f8c8d;
+}
+.dark-mode-v1 .modal .modal-close {
+  color: #ecf0f1;
+}
+
+
+/* Collapsibles */
+.dark-mode-v1 .collapsible-header {
+  background-color: #34495e;
+  color: #ecf0f1;
+  border-bottom: 1px solid #7f8c8d;
+}
+.dark-mode-v1 .collapsible-body {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border-bottom: 1px solid #7f8c8d;
+}
+
+/* Tabs */
+.dark-mode-v1 .tabs {
+    background-color: #34495e;
+}
+.dark-mode-v1 .tabs .tab a {
+  color: rgba(236, 240, 241, 0.7);
+}
+.dark-mode-v1 .tabs .tab a:hover,
+.dark-mode-v1 .tabs .tab a.active {
+  color: #ecf0f1;
+}
+.dark-mode-v1 .tabs .indicator {
+  background-color: #3498db;
+}
+
+/* Preloaders/Spinners */
+.dark-mode-v1 .preloader-wrapper.active .spinner-layer {
+  border-color: #3498db;
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-blue-only .spinner-layer {
+    border-color: #3498db !important;
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-red-only .spinner-layer {
+    border-color: #e74c3c !important;
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-yellow-only .spinner-layer {
+    border-color: #f1c40f !important;
+}
+.dark-mode-v1 .preloader-wrapper.active .spinner-green-only .spinner-layer {
+    border-color: #2ecc71 !important;
+}
+
+/* --- Dark Mode Materialize Overrides --- */
+.dark-mode-v1 .nav-wrapper.teal,
+.dark-mode-v1 .nav-wrapper.primary-color {
+  background-color: #1a252f !important; /* Dark Navbar background */
+}
+.dark-mode-v1 .nav-wrapper.teal a,
+.dark-mode-v1 .nav-wrapper.teal i,
+.dark-mode-v1 .nav-wrapper.primary-color a,
+.dark-mode-v1 .nav-wrapper.primary-color i {
+  color: #ecf0f1 !important; /* Dark Navbar text/icons */
+}
+
+.dark-mode-v1 .page-footer.teal,
+.dark-mode-v1 .page-footer.primary-color {
+  background-color: #1a252f !important; /* Dark Footer background */
+  color: #bdc3c7 !important; /* Dark Footer text */
+}
+.dark-mode-v1 .page-footer.teal a, /* Covers general links in footer */
+.dark-mode-v1 .page-footer.primary-color a {
+  color: #3498db !important; /* Dark Footer links */
+}
+
+.dark-mode-v1 .container.teal.lighten-2, /* Main content area on index.html */
+.dark-mode-v1 .container.primary-color-light {
+    background-color: #2c3e50 !important; /* Dark Slate Blue for main page area */
+    color: #ecf0f1 !important; /* Clouds text */
+}
+.dark-mode-v1 .footer-copyright.teal.lighten-3,
+.dark-mode-v1 .footer-copyright.primary-color-dark {
+    background-color: #121b22 !important; /* Even darker for copyright area */
+    color: #bdc3c7 !important;
+}
+
+.dark-mode-v1 .white-text {
+    color: #ecf0f1 !important; /* Clouds */
+}
+.dark-mode-v1 .black-text {
+    color: #ecf0f1 !important; /* Clouds for elements that were black text */
+}
+.dark-mode-v1 .grey-text { /* General grey text */
+    color: #bdc3c7 !important; /* Silver */
+}
+.dark-mode-v1 .grey-text.text-lighten-2 { /* Footer link text "E-Mail" */
+    color: #3498db !important; /* Peter River for links */
+}
+.dark-mode-v1 .grey-text.text-darken-2 { /* Footer "More Links" text */
+    color: #bdc3c7 !important; /* Silver for less interactive text */
+}
+.dark-mode-v1 .grey.darken-3 { /* Original body class if it was there */
+    background-color: #2c3e50 !important; /* Dark Slate Blue */
+    color: #ecf0f1 !important; /* Clouds */
+}
+
+/* Version 2: Warm Grey */
+.dark-mode-v2 {
+  background-color: #4a4a4a; /* Dark Grey */
+  color: #f2f2f2; /* Light Grey */
+}
+
+.dark-mode-v2 a {
+  color: #e67e22; /* Carrot */
+}
+
+.dark-mode-v2 .card,
+.dark-mode-v2 .panel {
+  background-color: #5e5e5e; /* Medium Grey */
+  border-color: #7b7b7b; /* Grey */
+}
+
+.dark-mode-v2 .navbar {
+  background-color: #3c3c3c; /* Darker Grey */
+  border-bottom-color: #4a4a4a; /* Dark Grey */
+}
+
+.dark-mode-v2 .navbar a {
+  color: #f2f2f2; /* Light Grey */
+}
+
+.dark-mode-v2 .footer {
+  background-color: #3c3c3c; /* Darker Grey */
+  color: #cccccc; /* Light Silver */
+  border-top-color: #4a4a4a; /* Dark Grey */
+}
+
+/*
+Gallery Dynamic Spacing Rules - Commented Out
+
+main.container > .row {
+}
+
+.gallery-item-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.gallery-item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item .card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.gallery-item .card .card-image {
+    flex-shrink: 0;
+}
+
+.gallery-item .card .card-content {
+    flex-grow: 1;
+}
+*/
+
+/* Gallery Masonry Layout using CSS Columns */
+main.container > .row:has(.gallery-item) {
+  column-gap: 1rem;
+  column-count: 1; /* Default to 1 column for small screens */
+  padding-top: 0;
+  margin-top: 0;
+  column-fill: auto;
+}
+
+.gallery-item {
+  break-inside: avoid; /* Prevent items from splitting across columns */
+  display: block; /* Or inline-block, ensure it's a block-level element for columns */
+  width: 100%; /* Make item take full width of its column */
+  margin-bottom: 1rem; /* Vertical spacing between items in the same column */
+}
+
+/* Responsive column counts */
+@media only screen and (min-width: 601px) { /* Materialize 'm' breakpoint */
+  main.container > .row:has(.gallery-item) {
+    column-count: 2 !important;
+  }
+}
+
+@media only screen and (min-width: 993px) { /* Materialize 'l' breakpoint */
+  main.container > .row:has(.gallery-item) {
+    column-count: 2 !important;
+  }
+}
+
+/* Ensure cards within gallery items behave well */
+.gallery-item .card {
+  width: 100%; /* Ensure card takes full width of the gallery-item */
+  /* Resetting any flex properties from previous attempts if they were on .card directly */
+  display: block;
+  flex-grow: 0;
+  flex-direction: initial;
+}
+.gallery-item .card .card-image {
+  flex-shrink: initial;
+}
+.gallery-item .card .card-content {
+  flex-grow: initial;
 }
