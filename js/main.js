@@ -27,19 +27,34 @@ function setThemeCss(theme) {
 const darkModeToggle = document.querySelector("#darkModeToggle");
 
 function applyTheme(theme) {
-  setThemeCss(theme);
-  if (darkModeToggle) {
-    darkModeToggle.checked = (theme === "dark");
+  setThemeCss(theme); // This swaps the stylesheet <link>
+
+  // NEW: Add logic to update body class
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode-v1");
+    document.body.classList.remove("light-mode");
+    // Ensure the toggle is correctly checked
+    if (darkModeToggle) darkModeToggle.checked = true;
+  } else {
+    document.body.classList.add("light-mode");
+    document.body.classList.remove("dark-mode-v1");
+    // Ensure the toggle is correctly UNchecked
+    if (darkModeToggle) darkModeToggle.checked = false;
   }
 }
 
 // On script load
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Materialize components like Sidenav
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems); // Moved Sidenav init here to ensure body is set first
+
   const savedTheme = localStorage.getItem("theme");
+  // Default to light theme if nothing is saved or if saved value is invalid
   if (savedTheme === "dark") {
     applyTheme("dark");
   } else {
-    applyTheme("light");
+    applyTheme("light"); // Default to light
   }
 });
 
