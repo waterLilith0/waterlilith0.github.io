@@ -24,7 +24,8 @@
 
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper teal white-text"> <!-- Keep teal for specific gallery navbar styling -->
+      <div class="nav-wrapper teal white-text">
+        <!-- Keep teal for specific gallery navbar styling -->
         <a href="index.html" class="brand-logo white-text">waterLilith</a>
         <a href="#" data-target="mobile-sidenav-gallery" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -34,14 +35,14 @@
             <div class="switch">
               <label>
                 <input type="checkbox" id="darkModeToggle">
-              <span class="lever"></span>
-            </label>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+                <span class="lever"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
   <ul class="sidenav" id="mobile-sidenav-gallery">
     <li><a href="https://github.com/waterLilith0"><i class="fa-brands fa-github"></i> Github</a></li>
@@ -49,8 +50,10 @@
     <!-- Link to index.html can be added if desired, or other gallery-specific links -->
     <li><a href="index.html">Home</a></li>
   </ul>
-
-  <main class="container galleria"></main>
+  
+  <div id="main_container">
+    <main class="container galleria"></main>
+  </div>
 
   <script src="js/main.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -326,6 +329,7 @@
       var containerHeight = container.offsetHeight;
 
       Galleria.configure({
+        _center: true,
         thumbnails: 'lazy',
         dataSource: data,
         dummy: 'pics/Sona/LilithSleep.png',
@@ -338,7 +342,6 @@
       Galleria.ready(function () {
         this.lazyLoadChunks(5);
       });
-      //Galleria.run('.galleria');
     }()
     );
     Galleria.run('.galleria');
